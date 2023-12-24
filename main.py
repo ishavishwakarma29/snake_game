@@ -38,8 +38,8 @@ while flag:
         flag=False
         scoreboard.game_over()
 
-    for segment in snake.seg:
-        if snake.head.distance(segment) < 10 and segment != snake.head:
+    for segment in snake.seg[1:]:
+        if snake.head.distance(segment) < 10:
             flag=False
             scoreboard.game_over()
 
