@@ -40,6 +40,13 @@ class Snake:
         if self.head.heading() != LEFT:
             self.head.setheading(0)
 
+    def reset(self):
+        for segment in self.seg:
+            segment.goto(1000, 1000)
+        self.seg.clear()
+        self.createSnake()
+        self.head=self.seg[0]
+
     def increase_size(self):
         self.add_seg(self.seg[-1].position())
 
